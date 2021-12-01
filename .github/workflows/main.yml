@@ -34,11 +34,7 @@ jobs:
 #         run: |
 #           echo Add other actions to build,
 #           echo test, and deploy your project.
-      - name: Debuggging with tmate
-        # You may pin to the exact commit or the version.
-        # uses: GitHub30/action-tmate@7a4c478c598693c8e03332a5d349360704f758e0
-        uses: GitHub30/action-tmate@master2
-      - name: cURL AxiosJS
+       - name: cURL AxiosJS
         # You may pin to the exact commit or the version.
         # uses: indiesdev/curl@60fb289d6e72261f095d7cefd578e659dd1b5182
         uses: indiesdev/curl@v1

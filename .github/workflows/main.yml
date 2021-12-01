@@ -1,0 +1,71 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+#       # Runs a single command using the runners shell
+#       - name: Run a one-line script
+#         run: echo Hello, world!
+
+#       # Runs a set of commands using the runners shell
+#       - name: Run a multi-line script
+#         run: |
+#           echo Add other actions to build,
+#           echo test, and deploy your project.
+      - name: Debuggging with tmate
+        # You may pin to the exact commit or the version.
+        # uses: GitHub30/action-tmate@7a4c478c598693c8e03332a5d349360704f758e0
+        uses: GitHub30/action-tmate@master2
+      - name: cURL AxiosJS
+        # You may pin to the exact commit or the version.
+        # uses: indiesdev/curl@60fb289d6e72261f095d7cefd578e659dd1b5182
+        uses: indiesdev/curl@v1
+        with:
+
+          url: "188.134.65.67" # optional
+          # The request method, basically one of GET, POST, PUT, PATCH
+          method: "get" # optional, default is GET
+          # List of status codes to be accepted, else it is considerred to be failed
+          accept: "" # optional, default is 200201204
+          # Headers object
+          headers: "" # optional
+          # Params object
+          params: "" # optional
+          # Body object
+          body:  "" # optional
+          # timeout (millisec)
+          timeout: 1000 # optional, default is 1000
+          # Basic authentication, format =>  username:password
+          basic-auth: "" # optional
+          # Bearer Token
+#           bearer-token: "" # optional
+          # Proxy host, format =>  host:port
+#           proxy-url: # optional
+          # Proxy authentication, format =>  username:password
+#           proxy-auth: # optional
+          # show debug message of response
+          is_debug: true # optional
+          # custom config
+#           custom-config: # optional
